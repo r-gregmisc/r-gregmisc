@@ -1,0 +1,72 @@
+2015-05-02  warnes
+
+	* [r2018] Rename 'trunk' to 'pkg' for compatibility with R-forge
+
+2013-12-07  warnes
+
+	* [r1756] Remove spurious '<' character
+	* [r1755] Move sii.constants out of data/ and into R/sysdata.Rda so
+	  it becomes part of the package namespace. Remove the now unneeded
+	  'undocumented' man page that listed it.
+
+2013-12-06  warnes
+
+	* [r1754] Update pdf file
+	* [r1753] rename package directories to match current CRAN
+	  standards
+	* [r1752] Add comment
+	* [r1751] Update NEWS for SII 1.0.3
+	* [r1750] Update affiliation to "Gregory R. Warnes Consulting"
+	* [r1749] Remove obsolete .First.lib() function and instead call
+	  data() within sii.excel().
+
+2011-09-01  warnes
+
+	* [r1497] Belated commit.
+	* [r1493] - Update Greg's email address
+	  - Update to meet current R package reqiurements.
+
+2011-08-26  warnes
+
+	* [r1481] Update Greg's email address
+	* [r1480] Update Greg's email address
+
+2010-07-23  warnes
+
+	* [r1450] Add ChangeLog link and NEWS file and link
+	* [r1449] Update for release 1.0.0 to CRAN
+
+2010-01-24  warnes
+
+	* [r1410] Add code to apply the examples from the 'official' C
+	  PROGRAM DEVELOPER'S KIT
+	* [r1409] Correct typo
+
+2008-06-23  warnes
+
+	* [r1298] Update SII.pdf
+	* [r1297] Add SII vignette, and update DESCRIPTION file to include
+	  vignette's dependencies as suggested packages
+
+2008-06-14  warnes
+
+	* [r1295] Minor changes to improve R CMD CHECK results
+	* [r1294] Add funding to DESCRIPTION file
+	* [r1293] Update package DESCRIPTION file.
+	* [r1292] Implement 'interpolate' as a separate argument, and when
+	  'interpolate=TRUE' replace NA's in any provided measurement
+	  vector.
+	* [r1291] Add SII to importance weight tables
+	* [r1290] Add SII to importance weight tables
+
+2008-06-12  warnes
+
+	* [r1289] More documentation, and some code cleanup
+	* [r1288] Update source code, improve documentation
+	* [r1287] Add namespace file to hide private functions
+
+2008-06-09  warnes
+
+	* [r1286] Add SII package implementing ANSI S3.5-1997 Speech
+	  Intelligibility Index (SII) calculations
+
