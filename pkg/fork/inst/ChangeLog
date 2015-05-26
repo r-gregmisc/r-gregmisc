@@ -1,0 +1,168 @@
+2015-05-02  warnes
+
+	* [r2018] Rename 'trunk' to 'pkg' for compatibility with R-forge
+
+2014-07-22  warnes
+
+	* [r1867] Update saved test output to match current version of R
+	* [r1866] Modify C function Rfork_signal to avoid issue with
+	  declared type of argument to signal function between Linux and
+	  Solaris.
+
+2011-09-01  warnes
+
+	* [r1496] Update NEWS for new release.
+	* [r1495] Put '.pidlist' variable into the global environment
+	  rather than the package environment.
+	* [r1494] Change .First to .onLoad for proper loading of fork
+	  dynamic library.
+
+2011-08-26  warnes
+
+	* [r1484] Update Greg's email address.
+	* [r1482] Update Greg's email address
+
+2009-07-17  warnes
+
+	* [r1351] Add NAMESPACE file, update version number to 1.2.3
+
+2009-05-09  warnes
+
+	* [r1341] Update for 1.2.1
+	* [r1340] Add convenience links to NEWS and ChangeLog at top level
+	* [r1339] Move NEWS to inst subdir.
+	* [r1338] Fix .Rd syntax error and update mailing address
+
+2007-10-22  warnes
+
+	* [r1196] Clarify GPL version
+
+2007-03-24  warnes
+
+	* [r1086] Update version number and date
+	* [r1085] Update my email address
+	* [r1084] Add note of financial support from Metrum
+
+2007-03-22  warnes
+
+	* [r1082] Add NEWS file
+	* [r1081] Add date to DESCRIPTION file
+
+2007-03-06  warnes
+
+	* [r1072] Update version number and description
+	* [r1071] Fix syntax error in example due to incomplete code
+	  deletion.
+	* [r1070] Add 'PACKAGE=' argument to '.C' calls to make 'R CMD
+	  check' happy
+	* [r1069] Improve regression tests, add saved .Rout files for doing
+	  regression testing.
+	* [r1068] Add a helpful comment
+	* [r1067] Create manual pages for handleSIGCLD() and
+	  restoreSIGCLD(), as well as appropriately modifying the pages for
+	  fork() and signal()
+	* [r1066] Create SysV and BSD tests for code to prevent zombie
+	  process creation, update code that intentionally creates zombies.
+	  Move sub-process creation and zombie test code to a function for
+	  use by all three test files
+	* [r1065] Create SysV and BSD tests for code to prevent zombie
+	  process creation, update code that intentionally creates zombies.
+	  Move sub-process creation and zombie test code to a function for
+	  use by all three test files
+	* [r1064] Add wrappers for C functions to control setting/restoring
+	  child
+	  process signal handler.
+	* [r1063] Modify script to check for the presence of zombie
+	  processes
+	* [r1062] This is a test commit.
+
+2007-02-15  warnes
+
+	* [r1055] Improve test code
+	* [r1054] Fix typo.
+
+2007-02-14  warnes
+
+	* [r1053] Add code to install SIGCHLD handler to avoid forked
+	  children from becoming zombies
+
+2007-02-05  warnes
+
+	* [r1047] Add documentation for signal()
+	* [r1046] Add signal() to example for fork()
+	* [r1045] Bump version number
+	* [r1044] Handle arguments better
+	* [r1043] Add signal() command to allow ignoring signals
+
+2006-08-02  warnes
+
+	* [r977] Update my email address
+
+2005-03-31  warnes
+
+	* [r584] Update version number
+	* [r583] Remove extraneous character ('.').
+
+2004-05-25  warnes
+
+	* [r341] Update version number for release.
+	* [r340] Add PACKAGE= argument to all .C and .Call invocations.
+
+2003-12-20  warnes
+
+	* [r273] Revised description a little bit.
+
+2003-12-19  warnes
+
+	* [r272] - Work around bug in Rd2dvi with /preformatted
+	  
+	  - Convert C++ style comments (//...) to ordinary C comments
+	  (/*...*/)
+	  to avoid warning message from some compilers.
+
+2003-12-09  warnes
+
+	* [r259] Change version number to 1.0.0.
+	* [r258] - remove non-portable signals
+	* [r257] - Changes to pass R CMD check
+	  - Remove non-portable signal references
+
+2003-07-18  warnes
+
+	* [r216] - Fix various problems identified by R CMD check.
+	* [r215] - Added Rfork_siglist() C function to list all signal
+	  information
+	  - Added siglist() R function to call Rfork_siglist()
+	  - Added documentation for signame(), sigval(), and siglist().
+	  - Removed some debugging code from fork.c.
+	  - Standardized order of parameters for Rfork_sigvar(),
+	  Rfork_signame().
+	* [r214] - Removed so that it will be auto-generated at packaging
+	  time.
+
+2003-07-17  warnes
+
+	* [r213] - Added Rfork_signame and Rfork_sigval C functions to look
+	  up signal
+	  information given a symbolic name or a signal value.
+	  - Added corresponding R signame() and sigval() functions.
+	* [r212] - Improved the help text for fork by making it more
+	  explicit what problems occur with code parsing after a fork.
+	  - Added a default signal to killall.
+	* [r211] - Added default signal number for killall.
+	* [r210] - Fixed email address in help pages.
+	* [r209] - Added CVS Id header tag
+	* [r208] - Clarified description text.
+	* [r207] - Fixed typos, added header with CVS Id tag
+	* [r206] - Added help pages for all functions.
+	  
+	  - .pidlist is now stored in the package's environment. This
+	  forces it
+	  to be local to the current R session, and prevents it from being
+	  saved/restored by accident using load/save/quit.
+	* [r205] - Split fork.R into fork.R, exit.R, wait.R, getpid.R.
+
+2003-07-16  warnes
+
+	* [r202] Initial revision
+
