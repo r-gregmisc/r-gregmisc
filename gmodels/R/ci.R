@@ -3,7 +3,7 @@
 ci  <-  function(x, confidence=0.95,alpha=1-confidence,...)
   UseMethod("ci")
 
-ci.default <- function(x, confidence=0.95,alpha=1-confidence,na.rm=FALSE,...)
+ci.numeric <- function(x, confidence=0.95,alpha=1-confidence,na.rm=FALSE,...)
   {
     est <- mean(x, na.rm=na.rm)
     stderr <-  sd(x, na.rm=na.rm)/sqrt(nobs(x));
@@ -72,31 +72,31 @@ ci.lme <- function(x,confidence=0.95,alpha=1-confidence,...)
     retval
   }
 
-ci.mer <- function (x,
-                    confidence = 0.95,
-                    alpha = 1 - confidence,
-                    n.sim = 1e4,
-                    ...)
-{
-    x.effects <- x@fixef
-    n <- length(x.effects)
+## ci.mer <- function (x,
+##                     confidence = 0.95,
+##                     alpha = 1 - confidence,
+##                     n.sim = 1e4,
+##                     ...)
+## {
+##     x.effects <- x@fixef
+##     n <- length(x.effects)
 
-    retval <- gmodels:::est.mer(obj = x,
-                                cm = diag(n),
-                                beta0 = rep(0, n),
-                                conf.int = confidence,
-                                show.beta0 = FALSE,
-                                n.sim = n.sim)
+##     retval <- gmodels::est.mer(obj = x,
+##                                 cm = diag(n),
+##                                 beta0 = rep(0, n),
+##                                 conf.int = confidence,
+##                                 show.beta0 = FALSE,
+##                                 n.sim = n.sim)
 
-    retval <- retval[,
-                     c("Estimate", "Lower.CI", "Upper.CI", "Std. Error", "p value"),
-                     drop=FALSE
-                     ]
-    colnames(retval)[c(2:3, 5)] <- c("CI lower", "CI upper", "p-value")
-    rownames(retval) <- names(x.effects)
+##     retval <- retval[,
+##                      c("Estimate", "Lower.CI", "Upper.CI", "Std. Error", "p value"),
+##                      drop=FALSE
+##                      ]
+##     colnames(retval)[c(2:3, 5)] <- c("CI lower", "CI upper", "p-value")
+##     rownames(retval) <- names(x.effects)
 
-    retval
-}
+##     retval
+## }
 
 
 ci.estimable  <-  function(x,confidence=0.95,alpha=1-confidence,...)

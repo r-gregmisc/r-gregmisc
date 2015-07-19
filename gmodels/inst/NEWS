@@ -8,6 +8,10 @@ Bug fixes:
   interval, which is *conservative* due to the discrete nature of the
   binomial distribution.
 
+Other Changes:
+
+- Support for lme4 objects has been removed due to incompatible
+  changes to the lme4 package.
 
 Version 2.16.0 - 2014-07-24
 ---------------------------

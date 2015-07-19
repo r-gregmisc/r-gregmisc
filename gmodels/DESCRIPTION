@@ -8,7 +8,7 @@ Author: Gregory R. Warnes, Ben Bolker, Thomas Lumley, and Randall C
         Program, of the NIH, National Cancer Institute, Center for
         Cancer Research under NCI Contract NO1-CO-12400.
 Maintainer: Gregory R. Warnes <greg@warnes.net>
-Description: Various R programming tools for model fitting
+Description: Various R programming tools for model fitting.
 Depends: R (>= 1.9.0)
 Suggests: gplots, gtools, Matrix, nlme, lme4 (>= 0.999999-0)
 Imports: MASS, gdata
