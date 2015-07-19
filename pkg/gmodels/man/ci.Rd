@@ -20,8 +20,8 @@
   \method{ci}{binom}(x, confidence=0.95, alpha=1-confidence, ...)
   \method{ci}{lm}(x, confidence=0.95, alpha=1-confidence, ...)
   \method{ci}{lme}(x, confidence=0.95, alpha=1-confidence, ...)
-  \method{ci}{mer}(x, confidence=0.95, alpha=1-confidence, n.sim=10000, ...) 
-  \method{ci}{estimable}(x, confidence=0.95, alpha=1-confidence, ...) 
+  \method{ci}{mer}(x, confidence=0.95, alpha=1-confidence, n.sim=10000, ...)
+  \method{ci}{estimable}(x, confidence=0.95, alpha=1-confidence, ...)
 }
 \arguments{
   \item{x}{ object from which to compute confidence intervals. }
@@ -32,9 +32,12 @@
   \item{\dots}{Arguments for methods}
   \item{n.sim}{Number of samples to take in \code{mcmcsamp}.}
 }
-%\details{
-%  ~~ If necessary, more details than the __description__  above ~~
-%}
+\details{
+  \code{ci.binom} computes binomial confidence intervals using the
+  Clopper-Pearson 'exact' method based on the binomial quantile
+  function.  Due to the discrete nature of the binomial distribution,
+  this interval is conservative.
+}
 \value{
   vector or matrix with one row per model parameter and elements/columns
   \code{Estimate}, \code{CI lower}, \code{CI upper}, \code{Std. Error},
@@ -50,7 +53,7 @@
 
 \examples{
 
-# mean and confidence interval 
+# mean and confidence interval
 ci( rnorm(10) )
 
 # binomial proportion and exact confidence interval
@@ -62,7 +65,7 @@ ci(b)       # indirect call
 # confidence intervals for regression parameteres
 data(state)
 reg  <-  lm(Area ~ Population, data=as.data.frame(state.x77))
-ci(reg) 
+ci(reg)
 
 %\dontrun{
 # mer example
