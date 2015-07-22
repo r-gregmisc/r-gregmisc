@@ -11,3 +11,5 @@ Description: These functions  provides simple wrappers around the Unix process
     processes.
 Maintainer: Gregory R. Warnes <greg@warnes.net>
 License: GPL-2
+URL: https://r-forge.r-project.org/projects/r-gregmisc/
+BugReports: https://r-forge.r-project.org/tracker/?func=browse&group_id=2031&atid=5378
