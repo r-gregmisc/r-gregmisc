@@ -1,7 +1,9 @@
 # $Id$
 
 fit.contrast.lm <- function(model, varname, coeff, showall=FALSE,
-                            conf.int=NULL, df=FALSE, ...)
+                            conf.int, 
+                            df=FALSE, 
+                            ...)
 {
   # check class of model
   if( !(any(class(model) %in% c("lm", "aov", "lme") ) ))
@@ -88,7 +90,7 @@ fit.contrast.lm <- function(model, varname, coeff, showall=FALSE,
 
     }
 
-  if(!is.null(conf.int)) # add confidence intervals
+  if(!missing(conf.int) && !is.null(conf.int)) # add confidence intervals
     {
       alpha <- 1-conf.int
       retval <- cbind( retval,
@@ -99,9 +101,11 @@ fit.contrast.lm <- function(model, varname, coeff, showall=FALSE,
     }
 
   if(!df)
-    return(retval[,-5,drop=FALSE])
-  else
-    return(retval)
+    retval <- retval[,-5,drop=FALSE]
+  
+  class(retval) <- "fit_contrast"
+  
+  retval  
 }
 
 # fit.contrast.lme and fit.contrast.mer are necessary because
@@ -202,3 +206,8 @@ fit.contrast.lme <- function(model, varname, coeff, showall=FALSE,
 fit.contrast <- function(model, varname, coeff, ...)
   UseMethod("fit.contrast")
 
+coef.fit_contrast <- function(object, ...)
+  object
+
+print.fit_contrast <- function(object, ...)
+  print(unclass(object))
