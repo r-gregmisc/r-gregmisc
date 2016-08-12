@@ -2,28 +2,28 @@
 %
 \name{ci}
 \alias{ci}
-\alias{ci.numeric}
+\alias{ci.default}
 \alias{ci.binom}
 \alias{ci.lm}
 \alias{ci.lme}
-%\alias{ci.mer}
+\alias{ci.mer}
 \alias{ci.estimable}
+\alias{ci.fit_contrast}
 \title{Compute Confidence Intervals}
 \description{ Compute and display confidence intervals for model
   estimates.  Methods are provided for the mean of a numeric vector
   \code{ci.default}, the probability of a binomial vector
-  \code{ci.binom}, and for \code{lm}, and \code{lme}
-  %, and \code{mer}
-  objects are
+  \code{ci.binom}, and for \code{lm}, \code{lme}, and \code{mer} objects are
   provided. }
 \usage{
   ci(x, confidence=0.95, alpha=1 - confidence, ...)
-  \method{ci}{numeric}(x, confidence=0.95, alpha=1-confidence, na.rm=FALSE, ...)
+  \method{ci}{default}(x, confidence=0.95, alpha=1-confidence, na.rm=FALSE, ...)
   \method{ci}{binom}(x, confidence=0.95, alpha=1-confidence, ...)
   \method{ci}{lm}(x, confidence=0.95, alpha=1-confidence, ...)
   \method{ci}{lme}(x, confidence=0.95, alpha=1-confidence, ...)
-  %\method{ci}{mer}(x, confidence=0.95, alpha=1-confidence, n.sim=10000, ...)
-  \method{ci}{estimable}(x, confidence=0.95, alpha=1-confidence, ...)
+  \method{ci}{mer}(x, confidence=0.95, alpha=1-confidence, n.sim=10000, ...) 
+  \method{ci}{estimable}(x, confidence=0.95, alpha=1-confidence, ...) 
+  \method{ci}{fit_contrast}(x, confidence=0.95, alpha=1-confidence, ...) 
 }
 \arguments{
   \item{x}{ object from which to compute confidence intervals. }
@@ -32,14 +32,11 @@
   \item{na.rm}{boolean indicating whether missing values should be
     removed. Defaults to \code{FALSE}.}
   \item{\dots}{Arguments for methods}
-%  \item{n.sim}{Number of samples to take in \code{mcmcsamp}.}
+  \item{n.sim}{Number of samples to take in \code{mcmcsamp}.}
 }
-\details{
-  \code{ci.binom} computes binomial confidence intervals using the
-  Clopper-Pearson 'exact' method based on the binomial quantile
-  function.  Due to the discrete nature of the binomial distribution,
-  this interval is conservative.
-}
+%\details{
+%  ~~ If necessary, more details than the __description__  above ~~
+%}
 \value{
   vector or matrix with one row per model parameter and elements/columns
   \code{Estimate}, \code{CI lower}, \code{CI upper}, \code{Std. Error},
@@ -55,7 +52,7 @@
 
 \examples{
 
-# mean and confidence interval
+# mean and confidence interval 
 ci( rnorm(10) )
 
 # binomial proportion and exact confidence interval
@@ -67,14 +64,14 @@ ci(b)       # indirect call
 # confidence intervals for regression parameteres
 data(state)
 reg  <-  lm(Area ~ Population, data=as.data.frame(state.x77))
-ci(reg)
+ci(reg) 
 
+%\dontrun{
 # mer example
-library(nlme)
-Orthodont$AgeGroup <- gtools::quantcut(Orthodont$age)
-fm2 <- lme(distance ~ Sex + AgeGroup, data = Orthodont,random=~1|Subject)
+library(lme4)
+fm2 <- lmer(Reaction ~ Days + (1|Subject) + (0+Days|Subject), sleepstudy)
 ci(fm2)
-
+%}
 
 
 }
