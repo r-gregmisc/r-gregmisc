@@ -23,18 +23,6 @@ Loading required package: lattice
 Loading required package: survival
 Loading required package: splines
 Loading required package: Formula
-
-Attaching package: 'Hmisc'
-
-The following objects are masked from 'package:base':
-
-    format.pval, round.POSIXt, trunc.POSIXt, units
-
-
-Loaded SASxport version 1.5.0 (2014-07-21).
-
-  Type `?SASxport' for usage information.
-
 > Sys.setenv("TZ"="GMT")
 > 
 > df1 <- data.frame( f=c(1.0, -1.0), d=as.integer(c(-1,1) )  )
@@ -62,4 +50,4 @@ In makeSASNames(colnames(df)) : Truncated 2 long names to 8 characters.
 > 
 > proc.time()
    user  system elapsed 
-  0.534   0.037   0.561 
+  0.513   0.036   0.538 

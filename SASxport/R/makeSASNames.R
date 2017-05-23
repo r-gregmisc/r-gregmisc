@@ -1,3 +1,4 @@
+#' @export
 makeSASNames <- function(names, nchar=8, maxPasses=10, quiet=FALSE)
   {
     ## This function takes a vector of potential SAS dataset or
@@ -6,9 +7,9 @@ makeSASNames <- function(names, nchar=8, maxPasses=10, quiet=FALSE)
 
     # Step 0: converce to uppercase
     names <- toupper(names)
-
+    
     # Step 1: expand/truncate to 8 characters
-    tooLong <- nchar(names, "bytes")>8
+    tooLong <- nchar(names)>8
     if (any(tooLong))
       {
         shortNames <- substr(as.character(names), 1, nchar)
@@ -28,18 +29,18 @@ makeSASNames <- function(names, nchar=8, maxPasses=10, quiet=FALSE)
         passes <- passes+1
         dups <- duplicated(varNames)
         repeatCount <- table(varNames)-1
-        digitChars <- nchar(as.character(repeatCount), "bytes")+1
+        digitChars <- nchar(as.character(repeatCount))+1
         names(digitChars) <- names(repeatCount)
         newNames <- make.names(substr(varNames, 1, nchar-digitChars[varNames]), unique=TRUE)
         changed <- newNames != names
-
+        
         ##newNames[changed] <- gsub("\\.([0-9]+)$","\\1", newNames[changed])
         varNames <- newNames
       }
 
     if(any(duplicated(varNames)))
       stop("Unable to make all names unique after ", passes, " passes.")
-
+    
     if(any(dups) && !quiet)
       warning("Made ",sum(dups)," duplicate names unique.")
 

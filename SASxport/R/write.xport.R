@@ -1,3 +1,5 @@
+#' @importFrom Hmisc label
+#' @export
 write.xport <- function(...,
                         list=base::list(),
                         file = stop("'file' must be specified"),
@@ -187,10 +189,19 @@ write.xport <- function(...,
             df[[i]] <- var <- toSAS(var, format.info=formats)
 
             # compute variable length
-            if(is.character(var))
-              varLen <- max(c(8,nchar(var, "bytes") ) )
-            else
+            # From R 3.3.0 NA is returned by nchar if the 
+            # the argument is NA, unless keepNA = FALSE is supplied
+            # In older versions nchar(NA) is 2, and this is the
+            # behavior we need now
+            if(is.character(var)) {
+              if ("keepNA" %in% names(as.list(args(nchar)))) {
+                varLen <- max(c(8,nchar(var, keepNA = FALSE) ) )
+              } else {
+                varLen <- max(c(8,nchar(var) ) )
+              }
+            } else {
               varLen <- 8
+            }
 
             # fill in variable offset and length information
             offsetTable[i, "len"]    <- varLen

@@ -194,18 +194,22 @@ sapply(w, head)
 stopifnot( is.data.frame(w)==FALSE && is.list(w)==TRUE )
 }
 
-
 #### The Hmisc library provides many useful functions for interacting with
 #### data imported from SAS via read.xport()
-library(Hmisc)
 
-describe(w$TEST)   # see labels, format names for dataset test
-lapply(w, describe, "")# see descriptive stats in more detail for each variable
+\dontrun{
+## For Hmisc version 3.14-5 (and presumably prior to that one) you will need to 
+## attach Hmisc. This is because describe and contents S3 methods' are not exported
+## Newer version of Hmisc fix the issue
 
-contents(w$TEST)   # another way to see variable attributes
-lapply(w, contents)# show contents of individual items in more detail
+Hmisc::describe(w$TEST)   # see labels, format names for dataset test
+lapply(w, Hmisc::describe)# see descriptive stats in more detail for each variable
 
-options(digits=7)  # compare the following matrix with PROC MEANS output
+Hmisc::contents(w$TEST)   # another way to see variable attributes
+lapply(w, Hmisc::contents)# show contents of individual items in more detail
+}
+
+## compare the following matrix with PROC MEANS output
 t(sapply(w$Z, function(x)
  c(Mean=mean(x),SD=sqrt(var(x)),Min=min(x),Max=max(x))))
 
