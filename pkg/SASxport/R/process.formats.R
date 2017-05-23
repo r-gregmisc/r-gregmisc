@@ -31,7 +31,7 @@ process.formats <- function(finfo)
                       if(!all(st==en))
                         stop("Format ranges are not handled.")
 
-                      list(value = all.is.numeric(st, 'vector'),
+                      list(value = Hmisc::all.is.numeric(st, 'vector'),
                            label = lab)
                     })
     finfo

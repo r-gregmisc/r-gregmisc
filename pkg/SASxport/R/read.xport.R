@@ -4,6 +4,10 @@
 ## Copied with permission on 2007-08-04
 ##
 
+#' @importFrom Hmisc label label<- label<-.default label<-.data.frame
+#' @importFrom utils download.file
+#' @export
+
 read.xport <- function(file,
                        force.integer=TRUE,
                        formats=NULL,
@@ -40,8 +44,8 @@ read.xport <- function(file,
 
     scat("Checking if the specified file has the appropriate header")
     xport.file.header <- "HEADER RECORD*******LIBRARY HEADER RECORD!!!!!!!000000000000000000000000000000  "
-    file.header <- readBin( file, what=character(0), n=1, size=nchar(xport.file.header, "bytes") )
-    file.header <- substr(file.header, start=1, stop=nchar(xport.file.header, "bytes") )
+    file.header <- readBin( file, what=character(0), n=1, size=nchar(xport.file.header) )
+    file.header <- substr(file.header, start=1, stop=nchar(xport.file.header) )
     if( !identical(xport.file.header, file.header) )
       stop("The specified file does not start with a SAS xport file header!")
 
@@ -126,7 +130,7 @@ read.xport <- function(file,
       SAStype(w) <- dsTypes[k]
       names(SAStype(w)) <- NULL
 
-      nam      <- names.tolower(makeNames(names(w), allow=name.chars))
+      nam      <- names.tolower(Hmisc::makeNames(names(w), allow=name.chars))
       names(w) <- nam
       dinfo    <- dsinfo[[k]]
 
@@ -138,7 +142,7 @@ read.xport <- function(file,
 
       lab      <- dinfo$label
 
-      ndinfo   <- names.tolower(makeNames(dinfo$name, allow=name.chars))
+      ndinfo   <- names.tolower(Hmisc::makeNames(dinfo$name, allow=name.chars))
       names(lab) <- names(fmt) <- names(formats) <- names(iformats) <- ndinfo
       if(length(w)>0)
         for(i in 1:length(w)) {
@@ -157,13 +161,13 @@ read.xport <- function(file,
 
           if(is.numeric(x)) {
             if(fi %in% sasdateform) {
-              x <- importConvertDateTime(x, 'date', 'sas')
+              x <- Hmisc::importConvertDateTime(x, 'date', 'sas')
               changed <- TRUE
             } else if(fi %in% sastimeform) {
-              x <- importConvertDateTime(x, 'time', 'sas')
+              x <- Hmisc::importConvertDateTime(x, 'time', 'sas')
               changed <- TRUE
             } else if(fi %in% sasdatetimeform) {
-              x <- importConvertDateTime(x, 'datetime', 'sas')
+              x <- Hmisc::importConvertDateTime(x, 'datetime', 'sas')
               changed <- TRUE
             } else if(force.integer) {
               if(all(is.na(x))) {

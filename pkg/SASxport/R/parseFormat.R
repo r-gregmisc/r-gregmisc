@@ -17,7 +17,7 @@ parseFormat <- function(format)
                   {
                     retval$name <- substr(format,0,index-1)[1]
 
-                    lenStr <- substr(format, index, nchar(format, "bytes"))
+                    lenStr <- substr(format, index, nchar(format))
 
                     index <- regexpr("\\.", lenStr)
                     if(index==-1)
@@ -28,7 +28,7 @@ parseFormat <- function(format)
                     else
                       {
                         retval$len     <- as.numeric(substr(lenStr, 0, index-1))
-                        retval$digits  <- as.numeric(substr(lenStr, index+1, nchar(lenStr, "bytes")))
+                        retval$digits  <- as.numeric(substr(lenStr, index+1, nchar(lenStr)))
                       }
                   }
 

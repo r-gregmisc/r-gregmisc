@@ -64,12 +64,10 @@ SAStype(x) <- value
 fail.time <- c(10,20)
 
 # set attributes
-%% label(fail.time) <- 'Failure Time'
 SASformat(fail.time) <- 'Numeric2'
 SASiformat(fail.time) <- 'Numeric2'
 
 # display individual attributes
-%% label(fail.time)
 SASformat(fail.time)
 SASiformat(fail.time)
 
@@ -84,7 +82,7 @@ SAStype(df)
 
 ## Example showing specification of default return value
 a <- 70
-label(a, default="no label")
+Hmisc::label(a, default="no label")
 }
 \keyword{utilities}
 \keyword{interface}

@@ -23,18 +23,6 @@ Loading required package: lattice
 Loading required package: survival
 Loading required package: splines
 Loading required package: Formula
-
-Attaching package: 'Hmisc'
-
-The following objects are masked from 'package:base':
-
-    format.pval, round.POSIXt, trunc.POSIXt, units
-
-
-Loaded SASxport version 1.5.0 (2014-07-21).
-
-  Type `?SASxport' for usage information.
-
 > Sys.setenv("TZ"="GMT")
 > 
 > ## Call C-level test routines
@@ -46,4 +34,4 @@ list()
 > 
 > proc.time()
    user  system elapsed 
-  0.450   0.033   0.472 
+  0.378   0.035   0.406 

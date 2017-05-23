@@ -23,18 +23,6 @@ Loading required package: lattice
 Loading required package: survival
 Loading required package: splines
 Loading required package: Formula
-
-Attaching package: 'Hmisc'
-
-The following objects are masked from 'package:base':
-
-    format.pval, round.POSIXt, trunc.POSIXt, units
-
-
-Loaded SASxport version 1.5.0 (2014-07-21).
-
-  Type `?SASxport' for usage information.
-
 > 
 > data(iris)
 > write.xport(Iris1=iris[1:2,],
@@ -84,4 +72,4 @@ $IRIS2
 > 
 > proc.time()
    user  system elapsed 
-  0.552   0.036   0.579 
+  0.515   0.038   0.541 
