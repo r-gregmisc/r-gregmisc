@@ -1,5 +1,5 @@
 
-R version 3.2.4 (2016-03-10) -- "Very Secure Dishes"
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
 Copyright (C) 2016 The R Foundation for Statistical Computing
 Platform: x86_64-apple-darwin13.4.0 (64-bit)
 
@@ -16,6 +16,12 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > library(SASxport)
+
+Loaded SASxport version 1.5.4 (2017-05-22).
+
+  Type `?SASxport' for usage information.
+
+
 > library(Hmisc)
 Loading required package: lattice
 Loading required package: survival
@@ -230,4 +236,4 @@ HEX:    20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20
 > 
 > proc.time()
    user  system elapsed 
-  0.609   0.044   0.643 
+  1.552   0.100   1.679 
