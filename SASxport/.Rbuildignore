@@ -2,3 +2,6 @@
 ^appveyor.yml$
 ^README.md$
 ^NEWS.md$
+^.gitignore
+.Rproj$
+
