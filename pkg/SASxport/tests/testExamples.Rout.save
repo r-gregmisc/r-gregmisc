@@ -1,5 +1,5 @@
 
-R version 3.2.4 (2016-03-10) -- "Very Secure Dishes"
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
 Copyright (C) 2016 The R Foundation for Statistical Computing
 Platform: x86_64-apple-darwin13.4.0 (64-bit)
 
@@ -16,17 +16,11 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > library(SASxport)
-> library(Hmisc)
-Loading required package: lattice
-Loading required package: survival
-Loading required package: Formula
-Loading required package: ggplot2
 
-Attaching package: 'Hmisc'
+Loaded SASxport version 1.5.4 (2017-05-22).
 
-The following objects are masked from 'package:base':
+  Type `?SASxport' for usage information.
 
-    format.pval, round.POSIXt, trunc.POSIXt, units
 
 > Sys.setenv("TZ"="GMT")
 > 
@@ -178,4 +172,4 @@ attr(,"SASformat")
 > 
 > proc.time()
    user  system elapsed 
-  0.626   0.040   0.656 
+  1.428   0.078   1.519 

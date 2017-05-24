@@ -1,7 +1,7 @@
 
-R version 3.1.0 Patched (2014-05-26 r65771) -- "Spring Dance"
-Copyright (C) 2014 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin13.1.0 (64-bit)
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -16,13 +16,12 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > library(SASxport)
-Loading required package: chron
-Loading required package: Hmisc
-Loading required package: grid
-Loading required package: lattice
-Loading required package: survival
-Loading required package: splines
-Loading required package: Formula
+
+Loaded SASxport version 1.5.4 (2017-05-22).
+
+  Type `?SASxport' for usage information.
+
+
 > Sys.setenv("TZ"="GMT")
 > 
 > lookup.xport("Alfalfa.xpt")
@@ -107,4 +106,4 @@ Variables in data set `W.TEST':
 > 
 > proc.time()
    user  system elapsed 
-  0.427   0.033   0.448 
+  1.511   0.088   1.609 

@@ -1,5 +1,4 @@
 library(SASxport)
-library(Hmisc)
 Sys.setenv("TZ"="GMT")
 
 set.seed(42)
