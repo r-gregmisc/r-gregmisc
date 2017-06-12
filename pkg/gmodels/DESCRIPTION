@@ -11,7 +11,7 @@ Maintainer: Gregory R. Warnes <greg@warnes.net>
 Description: Various R programming tools for model fitting
 Depends: R (>= 1.9.0)
 Suggests: gplots, gtools, Matrix, nlme, lme4 (>= 0.999999-0)
-Imports: MASS, gdata
+Imports: MASS, gdata, stats
 License: GPL-2
 URL: http://www.sf.net/projects/r-gregmisc
 NeedsCompilation: no
