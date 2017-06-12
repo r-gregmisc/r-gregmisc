@@ -35,3 +35,7 @@ S3method(summary, glh.test)
 importFrom(MASS, ginv)
 importFrom(gdata, frameApply)
 importFrom(gdata, nobs)
+
+importFrom(stats, chisq.test, coef, family, fisher.test,
+           mcnemar.test, pchisq, pf, pt, qbeta, qt, sd,
+           summary.glm, summary.lm)
