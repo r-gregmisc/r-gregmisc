@@ -4,7 +4,7 @@
 \alias{fit.contrast}
 \alias{fit.contrast.lm}
 \alias{fit.contrast.lme}
-\alias{fit.contrast.mer}
+%%\alias{fit.contrast.mer}
 \title{Compute and test arbitrary contrasts for regression objects}
 \description{
  Compute and test arbitrary contrasts for regression objects.
@@ -15,8 +15,8 @@ fit.contrast(model, varname, coeff, ... )
              conf.int=NULL, df=FALSE, ...)
 \method{fit.contrast}{lme}(model, varname, coeff, showall=FALSE,
              conf.int=NULL, df=FALSE, ...)
-\method{fit.contrast}{mer}(model, varname, coeff, showall=FALSE,
-             conf.int=NULL, sim.mer = TRUE, n.sim = 1000, ...)
+%% \method{fit.contrast}{mer}(model, varname, coeff, showall=FALSE,
+%%             conf.int=NULL, sim.mer = TRUE, n.sim = 1000, ...)
 }
 \arguments{
   \item{model}{regression (lm,glm,aov,lme) object for which the
@@ -34,10 +34,10 @@ fit.contrast(model, varname, coeff, ... )
   \item{df}{boolean indicating whether to return a column containing the
     degrees of freedom.}
   \item{\dots}{optional arguments provided by methods.}
-  \item{sim.mer}{Logical value. If TRUE p-values and confidence
-    intervals will be estimated using \code{mcmcsamp}. This option only takes effect for mer
-    objects.}
-  \item{n.sim}{Number of samples to use in \code{mcmcsamp}.}
+%%  \item{sim.mer}{Logical value. If TRUE p-values and confidence
+%%    intervals will be estimated using \code{mcmcsamp}. This option only takes effect for mer
+%%    objects.}
+%%  \item{n.sim}{Number of samples to use in \code{mcmcsamp}.}
   }
   
 \details{
@@ -138,10 +138,10 @@ summary(model, split=list( Genotype=list( "KO vs WT"=1 ),
                                         "2 vs 3" = 2 ) ) )
 
 
-# example for lme 
+# example for lme
 library(nlme)
 data(Orthodont)
-fm1 <- lme(distance ~ Sex, data = Orthodont,random=~1|Subject) 
+fm1 <- lme(distance ~ Sex, data = Orthodont,random=~1|Subject)
 
 # Contrast for sex.  This example is equivalent to standard treatment
 # contrast.

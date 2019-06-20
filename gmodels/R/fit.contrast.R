@@ -1,7 +1,7 @@
 # $Id$
 
 fit.contrast.lm <- function(model, varname, coeff, showall=FALSE,
-                            conf.int, 
+                            conf.int=NULL,
                             df=FALSE, 
                             ...)
 {

@@ -45,7 +45,7 @@ unByteCodeAssign(fun)
 \note{
   These functions are not intended as a permanent solution to issues
   with byte-code compilation or interpretation.  Any such issues should
-  be promtply reported to the R maintainers via the R Bug Tracking
+  be promptly reported to the R maintainers via the R Bug Tracking
   System at \url{https://bugs.r-project.org} and via the R-devel
   mailing list \url{https://stat.ethz.ch/mailman/listinfo/r-devel}.
 }

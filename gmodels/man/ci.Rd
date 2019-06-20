@@ -2,11 +2,11 @@
 %
 \name{ci}
 \alias{ci}
-\alias{ci.default}
+\alias{ci.numeric}
 \alias{ci.binom}
 \alias{ci.lm}
 \alias{ci.lme}
-\alias{ci.mer}
+%%\alias{ci.mer}
 \alias{ci.estimable}
 \alias{ci.fit_contrast}
 \title{Compute Confidence Intervals}
@@ -17,11 +17,11 @@
   provided. }
 \usage{
   ci(x, confidence=0.95, alpha=1 - confidence, ...)
-  \method{ci}{default}(x, confidence=0.95, alpha=1-confidence, na.rm=FALSE, ...)
+  \method{ci}{numeric}(x, confidence=0.95, alpha=1-confidence, na.rm=FALSE, ...)
   \method{ci}{binom}(x, confidence=0.95, alpha=1-confidence, ...)
   \method{ci}{lm}(x, confidence=0.95, alpha=1-confidence, ...)
   \method{ci}{lme}(x, confidence=0.95, alpha=1-confidence, ...)
-  \method{ci}{mer}(x, confidence=0.95, alpha=1-confidence, n.sim=10000, ...) 
+%%\method{ci}{mer}(x, confidence=0.95, alpha=1-confidence, n.sim=10000, ...)
   \method{ci}{estimable}(x, confidence=0.95, alpha=1-confidence, ...) 
   \method{ci}{fit_contrast}(x, confidence=0.95, alpha=1-confidence, ...) 
 }
@@ -32,7 +32,7 @@
   \item{na.rm}{boolean indicating whether missing values should be
     removed. Defaults to \code{FALSE}.}
   \item{\dots}{Arguments for methods}
-  \item{n.sim}{Number of samples to take in \code{mcmcsamp}.}
+%%  \item{n.sim}{Number of samples to take in \code{mcmcsamp}.}
 }
 %\details{
 %  ~~ If necessary, more details than the __description__  above ~~
@@ -67,10 +67,10 @@ reg  <-  lm(Area ~ Population, data=as.data.frame(state.x77))
 ci(reg) 
 
 %\dontrun{
-# mer example
-library(lme4)
-fm2 <- lmer(Reaction ~ Days + (1|Subject) + (0+Days|Subject), sleepstudy)
-ci(fm2)
+%# mer example
+%library(lme4)
+%fm2 <- lmer(Reaction ~ Days + (1|Subject) + (0+Days|Subject), sleepstudy)
+%ci(fm2)
 %}
 
 

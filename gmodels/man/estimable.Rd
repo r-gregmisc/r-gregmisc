@@ -3,7 +3,7 @@
 \name{estimable}
 \alias{estimable}
 \alias{estimable.default}
-\alias{estimable.mer}
+%%\alias{estimable.mer}
 \alias{estimable.mlm}
 %\alias{.wald}
 %\alias{.to.est}
@@ -16,8 +16,8 @@
 \usage{
 estimable(obj, cm, beta0, conf.int=NULL,  show.beta0, ...)
 \method{estimable}{default} (obj, cm, beta0, conf.int=NULL, show.beta0, joint.test=FALSE, ...)
-\method{estimable}{mer}(obj, cm, beta0, conf.int=NULL,
-               show.beta0, sim.mer=TRUE, n.sim=1000, ...) 
+%%\method{estimable}{mer}(obj, cm, beta0, conf.int=NULL,
+%%               show.beta0, sim.mer=TRUE, n.sim=1000, ...)
 \method{estimable}{mlm}(obj, cm, beta0, conf.int=NULL,  show.beta0, ...)
 %.wald(obj, cm,beta0=rep(0, ifelse(is.null(nrow(cm)), 1, nrow(cm))))
 %.to.est(obj, params)
@@ -37,12 +37,12 @@ estimable(obj, cm, beta0, conf.int=NULL,  show.beta0, ...)
    \item{show.beta0}{Logical value. If TRUE a column for beta0 will be
      included in the output table.  Defaults to TRUE when beta0 is
      specified, FALSE otherwise.}
-   \item{sim.mer}{Logical value. If TRUE p-values and confidence
-     intervals will be estimated using \code{mcmcsamp}.
-   }
-   \item{n.sim}{Number of MCMC samples to take in
-     \code{mcmcsamp}.
-   }
+%%   \item{sim.mer}{Logical value. If TRUE p-values and confidence
+%%     intervals will be estimated using \code{mcmcsamp}.
+%%   }
+%%   \item{n.sim}{Number of MCMC samples to take in
+%%     \code{mcmcsamp}.
+%%   }
    \item{...}{ignored}
 }
 \details{

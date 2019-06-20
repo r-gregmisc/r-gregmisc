@@ -7,7 +7,7 @@ est_p_ci.lm <- function(model, term, mult=1, digits=2, ...)
   if(is.character(term) && !(term %in% rownames(info)))
     stop(term, " is not a coefficient in model.")
   info <- info[term,]
-  info.ci <- trim(format( round(mult * info[1:3], digits=digits) ))
+  info.ci <- trimws(format( round(mult * info[1:3], digits=digits) ))
   if(mult < 0)
     names(info.ci) <- rev(names(info.ci))
   paste("Est=", info.ci[1],
@@ -27,10 +27,10 @@ est_p_ci.fit_contrast <- function(model, term, mult=1, digits=2, ...)
   if( !all(c("lower CI", "upper CI") %in% colnames(model) ) )
     stop("object does not contain confidence interval information.")
   
-  if(is.character(term) && !(term %in% rownames(info)))
+  if(is.character(term) && !(term %in% rownames(model)))
     stop(term, " is not a coefficient in model.")
   
-  info.ci <- trim(format( round(mult * model[term, c("lower CI", "upper CI")], 
+  info.ci <- trimws(format( round(mult * model[term, c("lower CI", "upper CI")],
                            digits=digits) )  )
   if(mult < 0)
     names(info.ci) <- rev(names(info.ci))
