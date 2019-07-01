@@ -9,6 +9,10 @@ export(
        ci2d,
        col2hex,
        colorpanel,
+       drawVennPolyominoes.colouring.featureCount,
+       drawVennPolyominoes.colouring.pValue,
+       drawVennPolyominoes.fields.labels.binary,
+       drawVennPolyominoes.fields.labels.letter,
        greenred,
        heatmap.2,
        hist2d,
@@ -19,6 +23,8 @@ export(
        panel.overplot,
        plot.lm2,
        plot.venn,
+       plot.venn.graph,
+       plot.venn.polyominoes,
        plotCI,
        plotLowess,
        plotmeans,
@@ -32,8 +38,14 @@ export(
        space,
        textplot,
        venn,
+       venn.observed2expected,
+       venn.graph.colouring,
+       venn.graph.simplify,
        wapply
 )
+
+importFrom("grDevices", "rainbow")
+importFrom("utils", "head")
 
 importFrom(gtools, invalid)
 importFrom(gtools, odd)
